@@ -10,6 +10,13 @@ permissions:
   contents: read
 
 jobs:
+  intentional_fail:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Intentional failure (training)
+        run: exit 1
+
   check:
     runs-on: ubuntu-latest
     steps:
